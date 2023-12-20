@@ -117,6 +117,7 @@ func readIpsecCryptoProfile(d *schema.ResourceData, meta interface{}) error {
 		return err
 	}
 
+	d.Set("name", name)
 	if err = d.Set("authentications", o.Authentication); err != nil {
 		log.Printf("[WARN] Error setting 'authentications' for %q: %s", d.Id(), err)
 	}

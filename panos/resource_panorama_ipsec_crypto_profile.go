@@ -144,6 +144,7 @@ func readPanoramaIpsecCryptoProfile(d *schema.ResourceData, meta interface{}) er
 
 	d.Set("template", tmpl)
 	d.Set("template_stack", ts)
+	d.Set("name", name)
 	if err = d.Set("authentications", o.Authentication); err != nil {
 		log.Printf("[WARN] Error setting 'authentications' for %q: %s", d.Id(), err)
 	}
